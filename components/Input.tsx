@@ -42,15 +42,15 @@ const Input = ({
       <div className={width === 'middle' ? 'w-80 flex' : 'w-40 flex'}>
         {prefix && (
           <input
-            size={1}
-            value={prefix}
+            size={4}
+            defaultValue={prefix}
             disabled={!prefixEnable}
             className="rounded-l-lg px-3 text-2xl border-2 dark:bg-slate-700 dark:border-slate-500"
           />
         )}
         <input
           type={type}
-          value={value}
+          defaultValue={value}
           disabled={disabled}
           onChange={onChange}
           onKeyDown={handleKeyDown}
@@ -64,8 +64,8 @@ const Input = ({
         />
         {suffix && (
           <input
-            size={1}
-            value={suffix}
+            size={4}
+            defaultValue={suffix}
             disabled={!suffixEnable}
             className="rounded-r-lg px-3 text-2xl border-2 dark:bg-slate-700 dark:border-slate-500"
           />
