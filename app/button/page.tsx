@@ -2,6 +2,7 @@
 import React from 'react'
 import Button from '@/components/Button'
 
+const title = 'Input'
 const data = [
   {id: 1, tag: 'type', ele: <Button />, code: "<Button />"},
   {id: 2, tag: 'type', ele: <Button type='primary' />, code: "<Button type='primary' />"},
@@ -16,12 +17,12 @@ const data = [
   {id: 11, tag: 'value', ele: <Button value='Hello' />, code: "<Button value='Hello' />"},
 ]
 
-const tags = ['type', 'primary', 'disable', 'href', 'className', 'onClick', 'value']
+const tags = Array.from(new Set(data.map(item => item.tag)))
 
 const page = () => {
   return (
     <div>
-      <h1 className='text-5xl mb-10 text-center'>Button</h1>
+      <h1 className='text-5xl mb-10 text-center'>{title}</h1>
       {tags.map((tag, index) => <Show key={index} tag={tag}/>)}
     </div>
   )
