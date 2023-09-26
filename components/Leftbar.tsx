@@ -22,7 +22,6 @@ const Leftbar = () => {
         <div className='flex flex-col gap-5 mt-10'>
           {links.map(link => {
             const isActive = pathname === link.route
-            console.log(isActive)
             return (
               <Button
                 value={link.label}
