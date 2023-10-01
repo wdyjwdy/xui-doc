@@ -8,7 +8,9 @@ const links = [
   {id: 1, label: 'Button', route: '/button'},
   {id: 2, label: 'Input', route: '/input'},
   {id: 3, label: 'Notify', route: '/notify'},
+  {id: 4, label: 'List', route: '/list'},
 ]
+
 
 const Leftbar = () => {
   const pathname = usePathname()

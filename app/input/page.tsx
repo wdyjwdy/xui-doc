@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import Input from '@/components/Input'
+import ShowData from '@/components/ShowData'
 
-const title = 'Input'
 const data = [
   {id: 1, tag: 'width', ele: <Input />, code: "<Input />"},
   {id: 2, tag: 'width', ele: <Input width='small' />, code: "<Input width='small' />"},
@@ -20,33 +20,8 @@ const data = [
   {id: 14, tag: 'onPressEnter', ele: <Input onPressEnter={() => {alert('hello')}} />, code: "<Input onPressEnter={() => {alert('hello')}} />"},
 ]
 
-const tags = Array.from(new Set(data.map(item => item.tag)))
-
 const page = () => {
-  return (
-    <div>
-      <h1 className='text-5xl mb-10 text-center'>{title}</h1>
-      {tags.map((tag, index) => <Show key={index} tag={tag}/>)}
-    </div>
-  )
-}
-
-const Show = ({ tag }: { tag: string }) => {
-  return (
-    <>
-      <h2 className='text-3xl my-10'>🌀{tag}</h2>
-      <div className='flex flex-col gap-10'>
-        {data.filter(item => item.tag === tag).map(item => {
-          return (
-            <div key={item.id} className='flex gap-10 items-center'>
-              {item.ele}
-              <p>{item.code}</p>
-            </div>
-          )
-        })}
-      </div>
-    </>
-  )
+  return <ShowData data={data} title='Input' />
 }
 
 export default page
